@@ -1,0 +1,126 @@
+:root{--bg:#2b0d14;--deep:#1b080d;--gold:#d4af6a;--pearl:#f4ecde;--smoke:#b8a590;--line:rgba(212,175,106,.25)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--pearl);font:400 1rem/1.65 'Jost',sans-serif}
+h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;line-height:1.15}
+h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:28px}
+h3{font-size:1.4rem}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.pad{padding-top:72px;padding-bottom:72px}
+.top{padding-top:120px}
+.muted{color:var(--smoke)}
+.btn{padding:11px 22px;border:1px solid var(--gold);background:none;color:var(--gold);font:inherit;cursor:pointer;transition:.25s}
+.btn:hover{background:var(--gold);color:var(--deep)}
+
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(27,8,13,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font:500 1.5rem 'Bodoni Moda',serif;color:var(--gold)}
+.links{display:flex;gap:28px}
+.links a:hover,.links a.active{color:var(--gold)}
+.burger{display:none;background:none;border:0;color:var(--gold);font-size:1.6rem;cursor:pointer}
+@media(max-width:760px){
+  .burger{display:block}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:16px;padding:20px 24px;background:var(--deep)}
+  .links.open{display:flex}
+}
+
+.hero{height:350vh}
+.hero.calm{height:auto}
+.sticky{position:sticky;top:0;height:100vh;overflow:hidden;perspective:900px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#4a1623,var(--deep) 70%)}
+.stage{position:absolute;inset:0;transform-style:preserve-3d}
+.panel{position:absolute;top:50%;left:50%;width:clamp(170px,26vw,320px);aspect-ratio:3/4;border:1px solid var(--gold);background:linear-gradient(160deg,#6b2233,#1b080d);background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:14px;font:1.3rem 'Bodoni Moda',serif;transform:translate3d(calc(-50% + var(--x)),-50%,var(--z)) rotateY(var(--r))}
+.panel span{background:rgba(27,8,13,.7);padding:4px 12px}
+.hero-copy{position:relative;z-index:2;text-align:center;max-width:640px;padding:0 20px;text-shadow:0 2px 20px #000}
+.hero-copy h1{color:var(--gold);font-size:clamp(2.6rem,9vw,5.5rem)}
+.hero-copy p{margin-top:16px}
+
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid.sm{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.box{display:flex;flex-direction:column;justify-content:flex-end;gap:10px;min-height:320px;padding:28px;background:linear-gradient(170deg,rgba(212,175,106,.1),var(--deep) 60%);border:1px solid var(--line);transition:border-color .3s}
+.box:hover{border-color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chip{border:1px solid var(--line);padding:3px 12px;font-size:.85rem;color:var(--smoke)}
+.chip:hover{color:var(--gold);border-color:var(--gold)}
+
+.card{display:flex;flex-direction:column;gap:6px;padding:12px;background:var(--deep);border:1px solid var(--line)}
+.card h3{font-size:1.15rem}
+.card .btn{margin-top:auto}
+.shot{aspect-ratio:1;background:radial-gradient(circle at 50% 45%,var(--gold) 0 6%,transparent 7%),linear-gradient(160deg,#5a1b2b,#1b080d);background-size:cover;background-position:center}
+
+.auth{max-width:440px}
+.auth form{display:grid;gap:14px;margin:24px 0}
+.auth input{padding:12px;background:var(--deep);border:1px solid var(--line);color:var(--pearl);font:inherit}
+.foot{border-top:1px solid var(--line);padding:32px 20px;text-align:center;color:var(--smoke)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---- v2 additions ---- */
+.logo{display:flex;align-items:center;gap:10px}
+.logo-img{width:auto;object-fit:contain}
+.logo-img.badge{background:var(--pearl);border-radius:50%;padding:4px}
+.mono{display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;font-family:'Bodoni Moda',serif;color:var(--gold)}
+.hero-copy .logo-img,.hero-copy .mono{margin:0 auto 14px;display:block}
+.hero-copy .mono{display:grid}
+.tabs{display:flex;gap:28px;overflow-x:auto;border-bottom:1px solid var(--line);margin-bottom:20px}
+.tab{background:none;border:0;border-bottom:2px solid transparent;color:var(--smoke);font:500 1.15rem 'Bodoni Moda',serif;padding:10px 0;cursor:pointer;white-space:nowrap}
+.tab.on{color:var(--gold);border-color:var(--gold)}
+.tile{display:flex;align-items:flex-end;aspect-ratio:4/5;padding:12px;border:1px solid var(--line);background:radial-gradient(circle at 50% 42%,var(--gold) 0 5%,transparent 6%),linear-gradient(160deg,#5a1b2b,#1b080d);background-size:cover;background-position:center;transition:border-color .3s}
+.tile:hover{border-color:var(--gold)}
+.tile span{background:rgba(27,8,13,.78);padding:4px 12px;font:1.1rem 'Bodoni Moda',serif}
+.chip.on{color:var(--deep);background:var(--gold);border-color:var(--gold)}
+.pick{display:grid;gap:4px;font-size:.85rem;color:var(--smoke)}
+.card select{padding:9px;background:var(--bg);color:var(--pearl);border:1px solid var(--line);font:inherit}
+.shot.wide{aspect-ratio:4/3}
+.sf{border-top:1px solid var(--line);background:var(--deep);padding-top:48px}
+.sf-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.sf h3{font-size:1.2rem;margin:10px 0}
+.sf p{margin-bottom:6px}
+.sf a:hover{color:var(--gold)}
+.sf-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:40px;padding-top:20px;padding-bottom:24px;border-top:1px solid var(--line);color:var(--smoke);font-size:.9rem}
+.crumbs{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.back{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;background:none;color:var(--gold);cursor:pointer;transition:.25s}
+.back:hover{background:var(--gold);color:var(--deep)}
+.linkbtn{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0}
+.linkbtn:hover{color:var(--gold)}
+.err{color:#ff9a9a;font-size:.9rem}
+.btn:disabled{opacity:.6;cursor:wait}
+
+/* ---- admin panel, design photos, links ---- */
+.linkbtn.u{text-decoration:underline}
+.ok{color:#9ad9a8;font-size:.9rem}
+.btn.sm{padding:6px 14px;font-size:.9rem}
+.btn.danger{border-color:#d98a8a;color:#e9a3a3}
+.btn.danger:hover{background:#d98a8a;color:var(--deep)}
+.thumbs{display:flex;flex-wrap:wrap;gap:6px}
+.thumbs button{width:40px;height:40px;padding:0;border:1px solid var(--line);background:var(--bg) center/cover;cursor:pointer}
+.thumbs button.on{border-color:var(--gold)}
+.adm{display:grid;gap:20px}
+.adm-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.adm-form{display:grid;gap:14px;padding:20px;border:1px solid var(--line);background:var(--deep)}
+.adm-form h2{margin-bottom:0}
+.adm-form .two{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.adm-actions{display:flex;flex-wrap:wrap;gap:12px}
+.field{display:grid;gap:4px;font-size:.9rem;color:var(--smoke)}
+.field input,.field select,.adm-row>input{padding:10px;background:var(--bg);color:var(--pearl);border:1px solid var(--line);font:inherit;min-width:0}
+.check{display:flex;align-items:center;gap:10px}
+.adm-list{list-style:none;padding:0;display:grid;gap:10px}
+.adm-row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px;padding:10px;border:1px solid var(--line);background:var(--deep)}
+.adm-form .adm-row{border:0;padding:0;background:none}
+.adm-list .adm-row{align-items:center}
+.adm-row>input{flex:1 1 160px}
+.adm-grow{flex:1 1 180px;min-width:0}
+.adm-thumb{width:56px;height:56px;flex:none;border:1px solid var(--line);background:var(--bg) center/cover}
+.badge{border:1px solid var(--line);padding:0 8px;font-size:.75rem;color:var(--gold)}
+.up{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px}
+.up-item{display:grid;gap:4px;justify-items:start;width:96px;font-size:.85rem}
+.up-item .adm-thumb{width:96px;height:96px}
+.up-btn{display:inline-block;cursor:pointer}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem}
+.tbl th,.tbl td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl a:hover{color:var(--gold)}
+
+/* ---- fixed medium size for design cards and type tiles ---- */
+.grid.sm{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+@media(max-width:600px){.grid.sm{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.card .btn{padding:10px 12px}
